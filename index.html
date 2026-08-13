@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="description" content="CALCULA — Professional Digital Calculator by Daffa Nurkhalish">
+  <title>CALCULA — Professional Calculator</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/calculator.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">C</div>
+        <div><strong>CALCULA</strong><small>Professional Calculator</small></div>
+      </div>
+      <nav>
+        <a class="nav-item active" href="#dashboard" data-page="dashboard">⌂ <span>Dashboard</span></a>
+        <a class="nav-item" href="#calculator" data-page="calculator">＋ <span>Calculator</span></a>
+        <a class="nav-item" href="pages/scientific.html">ƒx <span>Scientific</span></a>
+        <a class="nav-item" href="pages/converter.html">⇄ <span>Converter</span></a>
+        <a class="nav-item" href="pages/finance.html">▣ <span>Finance</span></a>
+        <a class="nav-item" href="pages/bmi.html">⚖ <span>BMI</span></a>
+        <a class="nav-item" href="pages/about.html">ⓘ <span>About Project</span></a>
+      </nav>
+      <div class="sidebar-footer">V2.0.0 · 2026</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn" id="menuBtn">☰</button>
+        <div>
+          <p class="eyebrow">STUDENT PROJECT</p>
+          <h1 id="pageTitle">Dashboard</h1>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" id="installBtn" hidden>Install</button>
+          <button class="icon-btn" id="themeBtn">☾</button>
+        </div>
+      </header>
+
+      <section id="dashboard" class="page">
+        <div class="hero">
+          <div>
+            <span class="badge">CALCULA V2.0</span>
+            <h2>Calculate smarter.<br><span>Work faster.</span></h2>
+            <p>A professional calculator web app built as a student project using HTML, CSS and JavaScript.</p>
+            <a class="primary-btn" href="#calculator">Open Calculator →</a>
+          </div>
+          <div class="hero-orb">C</div>
+        </div>
+        <div class="stats">
+          <article><small>Calculations</small><strong id="statCalculations">0</strong><span>Total saved history</span></article>
+          <article><small>Tools</small><strong>5</strong><span>Productivity tools</span></article>
+          <article><small>Version</small><strong>2.0</strong><span>Current release</span></article>
+        </div>
+        <div class="section-head"><div><p class="eyebrow">QUICK ACCESS</p><h3>Tools</h3></div></div>
+        <div class="tool-grid">
+          <a href="#calculator" class="tool-card"><b>＋</b><h4>Calculator</h4><p>Basic arithmetic with history.</p></a>
+          <a href="pages/scientific.html" class="tool-card"><b>ƒx</b><h4>Scientific</h4><p>Advanced mathematical functions.</p></a>
+          <a href="pages/converter.html" class="tool-card"><b>⇄</b><h4>Converter</h4><p>Length, weight and temperature.</p></a>
+          <a href="pages/finance.html" class="tool-card"><b>▣</b><h4>Finance</h4><p>Simple interest calculator.</p></a>
+          <a href="pages/bmi.html" class="tool-card"><b>⚖</b><h4>BMI</h4><p>Body mass index estimator.</p></a>
+        </div>
+      </section>
+
+      <section id="calculator" class="page" hidden>
+        <div class="calculator-layout">
+          <div class="calc-card">
+            <div class="calc-toolbar"><div><p class="eyebrow">PRECISION TOOL</p><h2>Calculator</h2></div><span class="status-dot">Ready</span></div>
+            <div class="display"><div id="expression"></div><strong id="result">0</strong></div>
+            <div class="keypad">
+              <button class="key danger" data-action="clear">AC</button><button class="key" data-action="backspace">⌫</button><button class="key operator" data-value="%">%</button><button class="key operator" data-value="/">÷</button>
+              <button class="key" data-value="7">7</button><button class="key" data-value="8">8</button><button class="key" data-value="9">9</button><button class="key operator" data-value="*">×</button>
+              <button class="key" data-value="4">4</button><button class="key" data-value="5">5</button><button class="key" data-value="6">6</button><button class="key operator" data-value="-">−</button>
+              <button class="key" data-value="1">1</button><button class="key" data-value="2">2</button><button class="key" data-value="3">3</button><button class="key operator" data-value="+">+</button>
+              <button class="key wide" data-value="0">0</button><button class="key" data-value=".">.</button><button class="key equals" data-action="calculate">=</button>
+            </div>
+          </div>
+          <aside class="history-card">
+            <div class="card-head"><h3>Recent calculations</h3><button id="clearHistory">Clear</button></div>
+            <div id="historyList" class="history-list"><div class="empty">Belum ada perhitungan.</div></div>
+          </aside>
+        </div>
+      </section>
+
+      <footer>CALCULA © 2026 · Developed by Daffa Nurkhalish · X APAT 1</footer>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="js/storage.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+  </script>
+</body>
+</html>
