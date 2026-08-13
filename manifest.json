@@ -1,1 +1,26 @@
-{"name":"CALCULA — Professional Calculator","short_name":"CALCULA","start_url":"./index.html","display":"standalone","background_color":"#f4f7fb","theme_color":"#2563eb","description":"Professional digital calculator student project by Daffa Nurkhalish.","icons":[{"src":"assets/icons/icon.svg","sizes":"any","type":"image/svg+xml"}]}
+{
+  "name": "CALCULA — Professional Calculator",
+  "short_name": "CALCULA",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#2563eb",
+  "description": "Professional digital calculator student project by Daffa Nurkhalish.",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
