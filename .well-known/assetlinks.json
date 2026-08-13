@@ -1,0 +1,23 @@
+from pathlib import Path
+import json, zipfile
+
+data = [{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.dapz_projectme.twa",
+        "sha256_cert_fingerprints": [
+            "82:76:C8:CA:44:62:58:F4:67:BF:C4:CB:A9:BC:F2:D9:AA:8B:63:D9:11:6D:EE:05:C2:B6:83:A2:15:B7:21:A2"
+        ]
+    }
+}]
+
+out = Path("/mnt/data/assetlinks.json")
+out.write_text(json.dumps(data, indent=2), encoding="utf-8")
+
+zip_path = Path("/mnt/data/CALCULA-assetlinks.zip")
+with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+    z.write(out, ".well-known/assetlinks.json")
+
+print(out)
+print(zip_path)
