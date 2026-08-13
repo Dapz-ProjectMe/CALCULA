@@ -1,0 +1,1 @@
+window.CalcStorage={getHistory(){return JSON.parse(localStorage.getItem("calculaHistory")||"[]")},saveHistory(h){localStorage.setItem("calculaHistory",JSON.stringify(h))},getTheme(){return localStorage.getItem("calculaTheme")||"light"},saveTheme(t){localStorage.setItem("calculaTheme",t)}};
